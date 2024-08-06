@@ -8,11 +8,11 @@ pipeline{
 
           steps{
 
-            sh "docker build -t mohanedahmed/depi-task:v${env.BUILD_NUMBER} ./Docker-Task/"
+            sh "docker build -t andrewbassily0/depi-project:v${env.BUILD_NUMBER} ./Docker-Task/"
             withCredentials([usernamePassword(credentialsId: 'myDockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                 sh "docker login -u $user -p $pass"
             }
-            sh "docker push mohanedahmed/depi-task:v${env.BUILD_NUMBER}"
+            sh "docker push andrewbassily0/depi-project:v${env.BUILD_NUMBER}"
           }            
         }
         
@@ -20,7 +20,7 @@ pipeline{
 
           steps{
 
-            sh "docker run -d -p 400${env.BUILD_NUMBER}:8080 --name cont_build_${env.BUILD_NUMBER} mohanedahmed/depi-task:v${env.BUILD_NUMBER}"
+            sh "docker run -d -p 400${env.BUILD_NUMBER}:8080 --name cont_build_${env.BUILD_NUMBER} andrewbassily0/depi-project:v${env.BUILD_NUMBER}"
           }     
         }
     }
