@@ -1,3 +1,5 @@
+
+    
 Step-by-Step Guide
 
 Create a GitHub repository: Create a new GitHub repository named my-project.
@@ -19,3 +21,18 @@ Configure Jenkins: Install necessary plugins (e.g., Git, Docker, Pipeline).
 Create Multibranch Pipeline Job: Create a multibranch pipeline job in Jenkins pointing to your GitHub repository.
 
 Configure Webhooks: Set up webhooks in GitHub to trigger builds on code changes.
+
+Repository structure:
+
+├── Ansible
+│   ├── ansible.cfg
+│   ├── inventory.ini
+│   └── play.yml
+├── Docker
+│   ├── template
+        ├── hello.html
+    ├── app.py
+│   ├── docker-compose.yml
+│   └── Dockerfile
+└── jenkinsfile
+    
